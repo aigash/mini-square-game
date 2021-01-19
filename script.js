@@ -189,6 +189,7 @@ function movingBottom(){
 
 function endGame(){
   if (((movingX >= 810) && (movingY >= 160 && movingY <= 540))){
+    todoElt.style.display = "none";
     gameElt.style.display = "none";
     theendElt.style.display = "block";
     timewinElt.textContent = "Il t'a quand même fallu " + (12 - compteur) + " secondes pour faire ça.";
@@ -198,6 +199,7 @@ function endGame(){
 
 function gameOverf(){
   if ((((movingX > 200 && movingX < 400) && (movingY > 50 && movingY < 250))) || ((movingX > (xYellow - 100) && movingX < (xYellow + 100)) && (movingY > (yYellow - 100) && (movingY < (yYellow + 100)))) || ((movingX > (xOrange - 100) && movingX < (xOrange + 100)) && (movingY > (yOrange - 100) && (movingY < (yOrange + 100)))) || ((movingX > (xPurple - 100) && movingX < (xPurple + 100)) && (movingY > (yPurple - 100) && (movingY < (yPurple + 100))))){
+    todoElt.style.display = "none";
     gameElt.style.display = "none";
     gameOver.style.display = "block";
   }
@@ -208,8 +210,9 @@ function diminuerCompteur( ){
   if (compteur > 0){
   compteurElt.textContent = compteur - 1;
   }else{
+    todoElt.style.display = "none";
     gameElt.style.display = "none";
-  gameOver.style.display = "block";
+    gameOver.style.display = "block";
   clearInterval(intervalId);
   }
 }
