@@ -194,6 +194,7 @@ function endGame(){
     theendElt.style.display = "block";
     timewinElt.textContent = "Il t'a quand même fallu " + (12 - compteur) + " secondes pour faire ça.";
     clearInterval(intervalId);
+    clearInterval(intervalPurple);
   }
 }
 
@@ -248,7 +249,7 @@ function movingYellow( ){
   }
 }
 
-setInterval(movingPurple, 110);
+let intervalPurple = setInterval(movingPurple, 110);
 
 getRandomInt(4, "assign");
 
